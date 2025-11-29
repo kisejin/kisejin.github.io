@@ -1112,6 +1112,7 @@ textarea {
         gap: 30px;
         transition: var(--transition-normal);
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
     }
     
     .nav-menu.active {
@@ -1142,6 +1143,26 @@ textarea {
     
     .contact-form {
         padding: 25px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .hamburger::before,
+    .hamburger::after {
+        transition: none;
     }
 }
 
